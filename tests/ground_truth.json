@@ -1,0 +1,47 @@
+
+{
+  "repo_001": {
+    "_comment": "本json文件用于为测试集评分给每个问题制定key_points",
+    "key_points": [
+      "smolagents is a Python library for building AI agents",
+      "the repository provides agent implementations",
+      "it focuses on simple agent abstractions"
+    ]
+  },
+
+  "arch_001": {
+    "key_points": [
+      "CodeAgent",
+      "ToolCallingAgent",
+      "CodeAgent represents tool calls as Python code",
+      "ToolCallingAgent represents tool calls as JSON"
+    ]
+  },
+
+  "location_001": {
+    "expected_files": [
+      "src/smolagents/agents.py"
+    ]
+  },
+
+  "flow_001": {
+    "key_points": [
+      "LLM generates an action",
+      "CodeAgent extracts/parses code",
+      "Python code is executed",
+      "tool calls can be performed through Python functions"
+    ],
+    "expected_files": [
+      "src/smolagents/agents.py",
+      "src/smolagents/local_python_executor.py"
+    ]
+  },
+
+  "comparison_001": {
+    "key_points": [
+      "CodeAgent uses Python code for actions",
+      "ToolCallingAgent uses JSON/tool calling",
+      "both are agent implementations in smolagents"
+    ]
+  }
+}

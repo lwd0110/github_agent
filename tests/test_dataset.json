@@ -1,0 +1,246 @@
+{
+  "repository": "huggingface/smolagents",
+  "total_questions": 30,
+  "questions": [
+    {
+      "id": "repo_001",
+      "level": 1,
+      "category": "repository_overview",
+      "difficulty": "easy",
+      "question": "这个项目是做什么的？",
+      "expected_answer": "smolagents 是 Hugging Face 开源的一个轻量级 agent library，用于构建能够使用工具完成任务的 AI agents，尤其强调 CodeAgent 和用代码表达 agent action。"
+    },
+    {
+      "id": "repo_002",
+      "level": 1,
+      "category": "repository_overview",
+      "difficulty": "easy",
+      "question": "这个项目主要解决什么问题？",
+      "expected_answer": "它提供了一套轻量的 agent 抽象，使开发者能够快速构建可以进行多步推理、调用工具并执行任务的 AI agents。"
+    },
+    {
+      "id": "repo_003",
+      "level": 1,
+      "category": "repository_overview",
+      "difficulty": "easy",
+      "question": "这个项目主要使用什么编程语言？",
+      "expected_answer": "主要使用 Python。"
+    },
+    {
+      "id": "repo_004",
+      "level": 1,
+      "category": "repository_overview",
+      "difficulty": "easy",
+      "question": "smolagents 中主要提供了哪两种 agent？",
+      "expected_answer": "CodeAgent 和 ToolCallingAgent。"
+    },
+    {
+      "id": "repo_005",
+      "level": 1,
+      "category": "repository_overview",
+      "difficulty": "medium",
+      "question": "smolagents 为什么强调 CodeAgent？",
+      "expected_answer": "因为 CodeAgent 使用 Python 代码表达 action，而不是简单地输出结构化的工具调用，从而可以表达更复杂的控制流、循环、工具组合和数据处理逻辑。"
+    },
+    {
+      "id": "repo_006",
+      "level": 1,
+      "category": "repository_overview",
+      "difficulty": "medium",
+      "question": "smolagents 是否只支持某一种 LLM？",
+      "expected_answer": "不是。smolagents 是 model-agnostic 的，可以支持不同的模型和推理提供商。"
+    },
+    {
+      "id": "repo_007",
+      "level": 2,
+      "category": "architecture",
+      "difficulty": "easy",
+      "question": "项目有哪些主要模块？",
+      "expected_answer": "主要包括 agents、tools、memory、Python executors、models、prompts 等模块。核心 agent 实现在 src/smolagents/agents.py。"
+    },
+    {
+      "id": "repo_008",
+      "level": 2,
+      "category": "architecture",
+      "difficulty": "medium",
+      "question": "CodeAgent 和 ToolCallingAgent 有什么区别？",
+      "expected_answer": "CodeAgent 通过生成 Python code 来执行 action，而 ToolCallingAgent 通过结构化的 tool call/JSON 来调用工具。CodeAgent 可以表达更复杂的程序逻辑，而 ToolCallingAgent 不需要执行生成的 Python 代码。"
+    },
+    {
+      "id": "repo_009",
+      "level": 2,
+      "category": "architecture",
+      "difficulty": "medium",
+      "question": "Agent 的基本执行流程是什么？",
+      "expected_answer": "Agent 接收任务后进行推理或规划，生成 action，执行 action/tool，获得 observation，然后根据 observation 继续下一步，直到产生 final answer。"
+    },
+    {
+      "id": "repo_010",
+      "level": 2,
+      "category": "architecture",
+      "difficulty": "medium",
+      "question": "smolagents 中的 agent 为什么需要 memory？",
+      "expected_answer": "Memory 用于保存 agent 在多个执行步骤中的信息，例如过去的 actions、observations 和相关执行状态，使 agent 能够基于之前步骤继续完成任务。"
+    },
+    {
+      "id": "repo_011",
+      "level": 2,
+      "category": "architecture",
+      "difficulty": "medium",
+      "question": "smolagents 中 Tool 的主要作用是什么？",
+      "expected_answer": "Tool 将外部能力封装成 agent 可以调用的函数或工具接口，使 agent 可以执行搜索、计算、访问外部资源等操作。"
+    },
+    {
+      "id": "repo_012",
+      "level": 2,
+      "category": "architecture",
+      "difficulty": "hard",
+      "question": "为什么 CodeAgent 可以执行比简单 tool calling 更复杂的操作？",
+      "expected_answer": "因为 CodeAgent 的 action 是 Python 代码，因此一次 action 中可以包含变量、循环、条件判断、函数组合和数据转换，而不是只能生成一个结构化的工具调用。"
+    },
+    {
+      "id": "repo_013",
+      "level": 2,
+      "category": "architecture",
+      "difficulty": "hard",
+      "question": "CodeAgent 的代码最终在哪里执行？",
+      "expected_answer": "CodeAgent 生成的代码由 Python executor 执行。默认可以使用 LocalPythonExecutor，也可以配置 E2B、Docker、Modal、Blaxel 等远程或隔离执行环境。"
+    },
+    {
+      "id": "repo_014",
+      "level": 3,
+      "category": "code_navigation",
+      "difficulty": "easy",
+      "question": "CodeAgent 定义在哪个文件？",
+      "expected_answer": "主要定义在 src/smolagents/agents.py。"
+    },
+    {
+      "id": "repo_015",
+      "level": 3,
+      "category": "code_navigation",
+      "difficulty": "easy",
+      "question": "ToolCallingAgent 定义在哪个文件？",
+      "expected_answer": "主要定义在 src/smolagents/agents.py。"
+    },
+    {
+      "id": "repo_016",
+      "level": 3,
+      "category": "code_navigation",
+      "difficulty": "easy",
+      "question": "LocalPythonExecutor 定义在哪个文件？",
+      "expected_answer": "定义在 src/smolagents/local_python_executor.py。"
+    },
+    {
+      "id": "repo_017",
+      "level": 3,
+      "category": "code_navigation",
+      "difficulty": "easy",
+      "question": "Tool 类定义在哪个文件？",
+      "expected_answer": "主要定义在 src/smolagents/tools.py。"
+    },
+    {
+      "id": "repo_018",
+      "level": 3,
+      "category": "code_navigation",
+      "difficulty": "medium",
+      "question": "ToolCallingAgent 使用的 system prompt 在哪里？",
+      "expected_answer": "主要位于 src/smolagents/prompts/toolcalling_agent.yaml。"
+    },
+    {
+      "id": "repo_019",
+      "level": 3,
+      "category": "code_navigation",
+      "difficulty": "medium",
+      "question": "Python executor 相关的 API 文档在哪里？",
+      "expected_answer": "在 docs/source/en/reference/python_executors.md，其中包含 PythonExecutor、LocalPythonExecutor 和远程 executor 的 API 文档。"
+    },
+    {
+      "id": "repo_020",
+      "level": 3,
+      "category": "code_navigation",
+      "difficulty": "medium",
+      "question": "Agent 的执行循环主要位于哪个核心文件？",
+      "expected_answer": "主要位于 src/smolagents/agents.py。"
+    },
+    {
+      "id": "repo_021",
+      "level": 4,
+      "category": "deep_code_understanding",
+      "difficulty": "hard",
+      "question": "CodeAgent 如何解析 LLM 返回的代码？",
+      "expected_answer": "CodeAgent 会从模型生成的响应中提取代码块，然后对代码 action 进行解析，再交给 Python executor 执行。"
+    },
+    {
+      "id": "repo_022",
+      "level": 4,
+      "category": "deep_code_understanding",
+      "difficulty": "hard",
+      "question": "ToolCallingAgent 如何处理 tool call？",
+      "expected_answer": "ToolCallingAgent 从模型输出中解析结构化的工具调用信息，根据工具名称和参数找到对应 Tool 并执行，然后将执行结果作为 observation 返回给 agent。"
+    },
+    {
+      "id": "repo_023",
+      "level": 4,
+      "category": "deep_code_understanding",
+      "difficulty": "hard",
+      "question": "CodeAgent 如何保存每一步的执行结果？",
+      "expected_answer": "Agent 使用 memory 记录多步执行过程中的信息，包括 action、observation、thought 等步骤信息，从而支持后续步骤继续推理。"
+    },
+    {
+      "id": "repo_024",
+      "level": 4,
+      "category": "deep_code_understanding",
+      "difficulty": "hard",
+      "question": "LocalPythonExecutor 的作用是什么？",
+      "expected_answer": "LocalPythonExecutor 负责执行 CodeAgent 生成的 Python 代码，并对代码执行过程施加一定的限制和安全检查。"
+    },
+    {
+      "id": "repo_025",
+      "level": 4,
+      "category": "deep_code_understanding",
+      "difficulty": "hard",
+      "question": "LocalPythonExecutor 为什么不能被当作真正的安全 sandbox？",
+      "expected_answer": "它只提供 best-effort 的限制和安全检查，并不是安全边界。对于不可信代码，官方建议使用 Docker、E2B、Modal 或 Blaxel 等隔离执行环境。"
+    },
+    {
+      "id": "repo_026",
+      "level": 4,
+      "category": "deep_code_understanding",
+      "difficulty": "hard",
+      "question": "LocalPythonExecutor 如何限制 Python import？",
+      "expected_answer": "它维护允许导入的模块列表，并检查代码请求导入的模块是否被授权；未授权的 import 会被拒绝。"
+    },
+    {
+      "id": "repo_027",
+      "level": 4,
+      "category": "deep_code_understanding",
+      "difficulty": "hard",
+      "question": "CodeAgent 为什么需要 code parser？",
+      "expected_answer": "因为 LLM 返回的是自然语言和代码混合的模型输出，CodeAgent 需要从响应中提取合法的代码 action，并将其交给 executor 执行。"
+    },
+    {
+      "id": "repo_028",
+      "level": 4,
+      "category": "deep_code_understanding",
+      "difficulty": "hard",
+      "question": "ToolCallingAgent 和 CodeAgent 在执行 tool 时最大的底层区别是什么？",
+      "expected_answer": "ToolCallingAgent 直接解析结构化的 tool call 并调用工具；CodeAgent 则先生成 Python 代码，再由 Python executor 执行代码，而代码中可以调用暴露给 agent 的工具。"
+    },
+    {
+      "id": "repo_029",
+      "level": 4,
+      "category": "deep_code_understanding",
+      "difficulty": "hard",
+      "question": "smolagents 如何防止 CodeAgent 生成的代码访问任意危险 Python 功能？",
+      "expected_answer": "LocalPythonExecutor 对可访问的 imports、函数和部分操作进行限制和检查，例如检查 authorized imports，并对危险函数访问进行拦截。但这些措施不是安全边界。"
+    },
+    {
+      "id": "repo_030",
+      "level": 4,
+      "category": "deep_code_understanding",
+      "difficulty": "hard",
+      "question": "如果我要从代码层面追踪 CodeAgent 从接收用户问题到最终执行 Python code 的完整路径，应该重点阅读哪些文件？",
+      "expected_answer": "首先阅读 src/smolagents/agents.py 中 CodeAgent 和 MultiStepAgent 的实现，然后阅读相关 prompt 文件了解模型输出格式，再阅读 src/smolagents/local_python_executor.py 了解生成代码如何被解析和执行，最后可以结合 memory 和 tools 模块理解 observation 和工具调用如何回流到 agent。"
+    }
+  ]
+}

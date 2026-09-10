@@ -1,0 +1,14 @@
+README.md
+pyproject.toml
+src/github_agent/__init__.py
+src/github_agent/agent.py
+src/github_agent/cli.py
+src/github_agent/github_api.py
+src/github_agent/report.py
+src/github_onboarding_agent.egg-info/PKG-INFO
+src/github_onboarding_agent.egg-info/SOURCES.txt
+src/github_onboarding_agent.egg-info/dependency_links.txt
+src/github_onboarding_agent.egg-info/entry_points.txt
+src/github_onboarding_agent.egg-info/requires.txt
+src/github_onboarding_agent.egg-info/top_level.txt
+tests/test_github_api.py

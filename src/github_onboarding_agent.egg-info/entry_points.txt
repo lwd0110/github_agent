@@ -1,0 +1,2 @@
+[console_scripts]
+github-agent = github_agent.cli:main
