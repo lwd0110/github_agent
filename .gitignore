@@ -21,3 +21,5 @@ reports/
 .DS_Store
 Thumbs.db
 
+# Local Agent traces
+.github_agent_traces/
